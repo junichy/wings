@@ -15,6 +15,16 @@ html/wp-content/themes/*
 # Ignore sensitive/unnecessary files within theme
 .DS_Store
 **/.DS_Store
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.svg
+*.ico
+*.bmp
 *.log
 *.sql
 *.wpress
