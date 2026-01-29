@@ -765,7 +765,7 @@ main {
   box-sizing: border-box;
 }
 
-a {
+a:where(:not(.wp-block-button__link):not(.wp-element-button)) {
   -webkit-transition: 0.1s;
   transition: 0.1s;
   cursor: pointer;

@@ -256,8 +256,18 @@
 .single__content-inner h2, .single__content-inner h3, .single__content-inner h4, .single__content-inner h5, .single__content-inner h6, .single__content-inner p {
   margin-bottom: 26px;
 }
+/* Gutenbergブロック用マージン */
+.single__content-inner > [class*="wp-block-"] {
+  margin-bottom: 26px;
+}
+.single__content-inner > [class*="wp-block-"]:last-child {
+  margin-bottom: 0;
+}
 @media (max-width: 768px) {
   .single__content-inner h2, .single__content-inner h3, .single__content-inner h4, .single__content-inner h5, .single__content-inner h6, .single__content-inner p {
+    margin-bottom: 10px;
+  }
+  .single__content-inner > [class*="wp-block-"] {
     margin-bottom: 10px;
   }
 }
