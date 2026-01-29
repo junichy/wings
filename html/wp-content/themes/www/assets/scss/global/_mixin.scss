@@ -1,0 +1,70 @@
+@use "variables" as v;
+
+// メディアクエリ
+$sp: 768px;
+$tablet: 980px;
+$xl: 1280px;
+
+@mixin xl {
+  @media (max-width: $xl) {
+    @content;
+  }
+}
+@mixin tb {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: $sp) {
+    @content;
+  }
+}
+
+$contents: 1750px; // ワイド
+// → calc($contents-size + $padding-pc * 2);
+@mixin mx {
+  @media (min-width: $contents) {
+    @content;
+  }
+}
+
+// アンダーライン (左から右へ流れる)
+@mixin u-line { // aタグに設置
+  position: relative;
+  &::after { //下線
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 1px;
+    background-color: v.$base_font_color;
+    transform: scale(0, 1);
+    transform-origin: right top;
+    transition: transform 0.3s;
+  }
+  &:hover {
+    &::after {
+      transform: scale(1, 1); //ホバー中下線
+      transform-origin: left top;
+    }
+  }
+}
+
+// 画像の大きさを揃える
+@mixin aspect {
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+  }
+  img, video, iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

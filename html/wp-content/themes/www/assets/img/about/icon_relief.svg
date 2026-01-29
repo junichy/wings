@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="45.637" height="54" viewBox="0 0 45.637 54">
+  <g id="diamond" transform="translate(-39.62)">
+    <g id="グループ_8121" data-name="グループ 8121" transform="translate(39.62 19.174)">
+      <path id="パス_26172" data-name="パス 26172" d="M53.252,301.681l5.911,22.162L39.62,301.681Z" transform="translate(-39.62 -289.017)"/>
+      <path id="パス_26173" data-name="パス 26173" d="M53.365,191.179H39.62l9.035-9.035a1.586,1.586,0,0,1,1.12-.463h9.018Z" transform="translate(-39.62 -181.681)"/>
+    </g>
+    <g id="グループ_8122" data-name="グループ 8122" transform="translate(56.529 19.174)">
+      <path id="パス_26174" data-name="パス 26174" d="M215.265,191.179H204.41l5.428-9.5Z" transform="translate(-203.928 -181.681)"/>
+      <path id="パス_26175" data-name="パス 26175" d="M211.66,301.681l-5.91,22.162-5.91-22.162Z" transform="translate(-199.84 -289.017)"/>
+    </g>
+    <g id="グループ_8123" data-name="グループ 8123" transform="translate(65.715 19.174)">
+      <path id="パス_26176" data-name="パス 26176" d="M295.818,191.179l-5.428-9.5h9.018a1.586,1.586,0,0,1,1.12.463l9.035,9.035Z" transform="translate(-290.02 -181.681)"/>
+      <path id="パス_26177" data-name="パス 26177" d="M292.793,301.681h13.632l-19.543,22.162Z" transform="translate(-286.882 -289.017)"/>
+    </g>
+    <g id="グループ_8124" data-name="グループ 8124" transform="translate(60.856 0)">
+      <path id="パス_26178" data-name="パス 26178" d="M242.423,9.027a1.583,1.583,0,0,1-1.583-1.583V1.583a1.583,1.583,0,1,1,3.166,0V7.444A1.583,1.583,0,0,1,242.423,9.027Z" transform="translate(-240.84 0)"/>
+    </g>
+    <g id="グループ_8125" data-name="グループ 8125" transform="translate(43.56 4.845)">
+      <path id="パス_26179" data-name="パス 26179" d="M80.1,53.36l-2.93-5.075A1.583,1.583,0,1,1,79.908,46.7l2.93,5.075A1.583,1.583,0,1,1,80.1,53.36Z" transform="translate(-76.954 -45.91)"/>
+    </g>
+    <g id="グループ_8126" data-name="グループ 8126" transform="translate(75.221 4.845)">
+      <path id="パス_26180" data-name="パス 26180" d="M377.747,53.94a1.583,1.583,0,0,1-.579-2.162L380.1,46.7a1.583,1.583,0,1,1,2.742,1.583l-2.93,5.075A1.583,1.583,0,0,1,377.747,53.94Z" transform="translate(-376.955 -45.91)"/>
+    </g>
+  </g>
+</svg>

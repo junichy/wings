@@ -1,0 +1,25 @@
+@use "../global" as g;
+
+body {
+  font-family: g.$base_font;
+  font-size: 16px;
+  // font-size: clamp(16px, 1.25vw, 20px);
+  color: g.$base_font_color;
+  background-color: #fff;
+  line-height: 1.5;
+  width: 100%;
+  overflow-x: hidden;
+  @include g.sp() {
+    font-size: 14px;
+  }
+}
+main {
+  // margin-top: 123px;
+  overflow: hidden;
+  // @include g.tb {
+  //   margin-top: 93px;
+  // }
+  // @include g.sp {
+  //   margin-top: 50px;
+  // }
+}

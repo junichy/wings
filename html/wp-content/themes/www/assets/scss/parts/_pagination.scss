@@ -1,0 +1,45 @@
+@use "../global" as g;
+
+.pagination {
+  padding: 25px;
+  text-align: center;
+  font-size: 24px;
+  @include g.sp {
+    padding: 30px 0;
+    font-size: 15px;
+  }
+}
+.page-numbers {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  border-radius: 35px;
+  border: 1px solid g.$font-gray;
+  transition: .3s;
+  color: g.$font-gray;
+  margin: 0 10px;
+  @include g.sp {
+    height: 33px;
+    width: 33px;
+    line-height: 33px;
+    margin: 0 6px;
+  }
+  &.prev, &.next {
+    display: none;
+    @include g.sp {
+      // width: 90px;
+    }
+  }
+  // &.prev {
+  //   margin-right: 25px;
+  // }
+  // &.next {
+  //   margin-left: 25px;
+  // }
+  &:hover, &.current {
+    color: #fff;
+    background-color: g.$blue;
+    border: 1px solid g.$blue;
+  }
+}

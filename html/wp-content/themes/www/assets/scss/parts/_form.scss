@@ -1,0 +1,280 @@
+@use "../global" as g;
+
+
+/* form
+========================================= */
+.form {
+  &__contents {
+    background-color: #fff;
+    box-shadow: 0 0 22px rgba(0, 0, 0, 16%);
+    border-radius: 22px;
+    @include g.sp {
+      box-shadow: 0 0 6px rgba(0, 0, 0, 16%);
+      border-radius: 10px;
+    }
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 42.5px;
+    @include g.tb {
+      flex-direction: column;
+    }
+    @include g.sp {
+      margin-bottom: 25px;
+    }
+    &--textarea, &--check {
+      align-items: flex-start;
+    }
+    &-title {
+      width: 30%;
+      min-width: 320px;
+      margin-right: 2%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include g.tb {
+        width: 100%;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+      }
+      @include g.sp {
+        min-width: inherit;
+      }
+      &-text, &-required, &-optional {
+        display: block;
+      }
+      &-text {
+        font-size: 22px;
+        font-weight: bold;
+        @include g.tb {
+          margin-right: 6px;
+        }
+        @include g.sp {
+          font-size: 14px;
+        }
+      }
+      &-required, &-optional {
+        font-size: 15px;
+        font-weight: 200;
+        color: #fff;
+        line-height: 1;
+        padding: 8px 13px;
+        border-radius: 6px;
+        @include g.sp {
+          padding: 3px 12px;
+          font-size: 13px;
+          border-radius: 3px;
+        }
+      }
+      &-required {
+        background: linear-gradient(to bottom, g.$blue, g.$green);
+      }
+      &-optional {
+        background-color: #B7B7B7;
+      }
+      &--textarea {
+        padding-top: 11px;
+        @include g.sp {
+          padding-top: 0;
+        }
+      }
+      &--btn {
+        opacity: 0;
+        @include g.sp {
+          display: none;
+        }
+      }
+    }
+    &-contents {
+      width: 68%;
+      // font-size: 19px;
+      font-size: clamp(14px, 0.989vw, 19px);
+      // line-height: 2.21;
+      @include g.tb {
+        width: 100%;
+        font-size: 14px;
+      }
+      @include g.sp {
+        font-size: 12px;
+      }
+      &--select {
+        position: relative;
+        &::after { // プルダウン下矢印▼
+          content: '';
+          position: absolute;
+          top: 26px;
+          right: 3.2%;
+          display: block;
+          width: 21px;
+          height: 10.5px;
+          background: url(../img/recruit/icon_select-arrow.svg) no-repeat center center / cover;
+          @include g.sp {
+            top: 14.5px;
+            right: 2.2%;
+            width: 15px;
+            height: 7.5px;
+          }
+        }
+      }
+      &--radio {
+        padding: 11px 0;
+        vertical-align: middle;
+        @include g.sp {
+          padding: 6px 0 2px;
+          line-height: 1;
+        }
+        .mwform-radio-field {
+          margin-right: 3.5%;
+          @include g.sp {
+            margin-right: 5.5%;
+          }
+          >label {
+            cursor: pointer;
+          }
+        }
+        .mwform-radio-field-text {
+          vertical-align: middle;
+        }
+      }
+      &--check {
+        .mwform-checkbox-field {
+          display: block;
+          margin-left: 0 !important;
+        }
+      }
+      &--btn {
+        text-align: center;
+        margin-top: 15px;
+        @include g.sp {
+          margin-top: 9px;
+        }
+      }
+      // &--bg {
+      //   width: 100%;
+      //   padding: 11px 28px;
+      //   border-radius: 6px;
+      //   background-color: #F5F5F5;
+      //   @include g.sp {
+      //     padding: 5px 15px;
+      //   }
+      // }
+      &-text, &-textarea, &-select, &-date {
+        width: 100%;
+        padding: 16px 28px;
+        border-radius: 6px;
+        background-color: #F5F5F5;
+        @include g.sp {
+          padding: 5px 15px;
+          min-height: 35px;
+        }
+      }
+      &-text, &-textarea {
+        &::placeholder {
+          color: #C1C1C1;
+          font-weight: 200;
+          // line-height: 1;
+        }
+      }
+      &-textarea {
+        resize: none;
+      }
+      &-select {
+        color: #333333;
+        cursor: pointer;
+      }
+      &-radio {
+        width: 16px;
+        height: 16px;
+        margin-right: 1px !important;
+        vertical-align: middle;
+        @include g.sp {
+          width: 15px;
+          height: 15px;
+          // vertical-align: middle;
+        }
+      }
+      input, select, textarea {
+        &:focus {
+          outline: none;
+        }
+      }
+      input[type="text"] { //プレイスホルダーの高さ修正
+        // line-height: 1;
+        vertical-align: middle;
+      }
+    }
+  }
+  &__btn {
+    width: 100%;
+    max-width: 388px;
+    background: linear-gradient(75deg,#F6DF31, g.$orange);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.005em;
+    border-radius: 46px;
+    border: 1px solid transparent;
+    padding: 13px;
+    transition: 0.3s;
+    @include g.sp {
+      font-size: 11px;
+      max-width: 255px;
+      padding: 9px;
+    }
+    &:hover {
+      background: #fff;
+      color: g.$orange;
+      border: 1px solid g.$orange;
+    }
+    &--back { //戻るボタン
+      width: 100%;
+      max-width: 388px;
+      background-color: #B7B7B7;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 0.005em;
+      border-radius: 46px;
+      border: 1px solid transparent;
+      padding: 13px;
+      transition: 0.3s;
+      @include g.sp {
+        font-size: 11px;
+        max-width: 255px;
+        padding: 9px;
+        margin-bottom: 10px;
+      }
+      &:hover {
+        background: #fff;
+        color: g.$orange;
+        border: 1px solid g.$orange;
+      }
+    }
+  }
+  &__complete {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 2;
+  }
+}
+.mw_wp_form_confirm { //確認画面
+  .form__item-contents--select::after { //selectの下矢印削除
+    display: none;
+  }
+  .form__item-contents--btn { //戻るボタン追加時デザイン修正
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    @include g.sp {
+      flex-direction: column;
+    }
+  }
+  .form__item-title--btn {
+    display: none;
+  }
+}

@@ -1,0 +1,30 @@
+/*-----------------------------------------------
+Privacy-policy
+------------------------------------------------*/
+/* privacy
+======================================= */
+.privacy__inner {
+  padding-top: 126px;
+  padding-bottom: 250px;
+}
+@media (max-width: 768px) {
+  .privacy__inner {
+    padding-bottom: 100px;
+  }
+}
+.privacy__text {
+  font-family: "Noto Sans JP";
+  font-size: 18px;
+  line-height: 1.944;
+  margin-bottom: 35px;
+}
+@media (max-width: 980px) {
+  .privacy__text {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .privacy__text {
+    font-size: 12px;
+  }
+}

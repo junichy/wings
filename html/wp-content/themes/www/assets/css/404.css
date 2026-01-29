@@ -1,0 +1,14 @@
+.not-found__inner {
+  padding-bottom: 250px;
+}
+@media (max-width: 768px) {
+  .not-found__inner {
+    padding-bottom: 120px;
+  }
+}
+.not-found__title {
+  padding: 0;
+}
+.not-found__text {
+  text-align: center;
+}

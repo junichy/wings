@@ -1,0 +1,55 @@
+/* application
+====================================== */
+.application__inner {
+  padding-top: 125px;
+}
+@media (max-width: 768px) {
+  .application__inner {
+    padding-top: 53px;
+  }
+}
+.application__lead {
+  text-align: center;
+  margin-bottom: 60px;
+}
+@media (max-width: 768px) {
+  .application__lead {
+    text-align: left;
+  }
+}
+.application__lead > span {
+  display: block;
+  margin-bottom: 20px;
+}
+.application__lead .bold {
+  font-weight: bold;
+}
+.application__contents {
+  padding: 91px 7.2% 59px;
+}
+@media (max-width: 768px) {
+  .application__contents {
+    padding: 33px 5.128%;
+  }
+}
+.application__contents-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 45px;
+}
+@media (max-width: 768px) {
+  .application__contents-title {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+}
+.application__contents-lead {
+  text-align: center;
+  margin-bottom: 45px;
+}
+@media (max-width: 768px) {
+  .application__contents-lead {
+    text-align: left;
+  }
+}

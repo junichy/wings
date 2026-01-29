@@ -1,0 +1,253 @@
+@use "../global" as g;
+
+
+/* cv
+========================================= */
+.cv {
+  position: relative;
+  &__inner {
+    background: url(../img/cv_bg.png) no-repeat center center / cover;
+    position: relative;
+    z-index: 0;
+    color: #fff;
+    margin: 0 calc(50% - 50vw);
+    max-width: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 86px 60px;
+    @media (min-width:1870px) {
+      padding: 81px calc(50vw - calc(1800px / 2));
+    }
+    @include g.tb {
+      padding: 2px g.$padding-sp 38px;
+      flex-direction: column;
+    }
+    &::before { //背景フィルター
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(64, 193, 201, 0.3), #40C9C4);
+    }
+  }
+  &__left {
+    width: 48.6%;
+    @include g.tb {
+      width: 100%;
+    }
+  }
+  &__right {
+    width: 51.4%;
+    padding-top: 6px;
+    @include g.tb {
+      width: 100%;
+      padding-top: 42px;
+    }
+  }
+  &__title {
+    position: relative;
+    padding-bottom: 37px;
+    margin-bottom: 35px;
+    @include g.sp {
+      margin-bottom: 28px;
+    }
+    &-main {
+      @include g.tb {
+        display: none;
+      }
+      img {
+        width: inherit;
+      }
+    }
+    &-sub {
+      color: #fff;
+      font-weight: normal;
+      @include g.tb {
+        display: none;
+      }
+    }
+    &::after { //白横棒
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 229px;
+      height: 1px;
+      background-color: #fff;
+    } 
+  }
+  &__text {
+    font-size: 22px;
+    margin-bottom: 35px;
+    letter-spacing: 0.05em;
+    line-height: 1.54;
+    @include g.sp {
+      font-size: 13px;
+    }
+  }
+  &__tel {
+    margin-bottom: 2em;
+    &-upper {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      margin-bottom: 1em;
+      @include g.sp {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+    }
+    &-middle {
+      margin-bottom: 13px;
+      line-height: 1.44;
+      @include g.sp {
+        margin-bottom: 3px;
+      }
+      img {
+        width: 25.9px;
+        margin-right: 18.9px;
+        @include g.sp {
+          // width: 26.5px;
+          margin-right: 5px;
+        }
+      }
+      span {
+        font-family: g.$font-noto;
+        font-size: clamp(24px,2.3958333vw,46px);
+        font-weight: bold;
+        letter-spacing: 0.08em;
+        vertical-align: middle;
+        @include g.sp {
+          font-size: 36px;
+        }
+      }
+      a {
+        color: #fff;
+      }
+    }
+    &-lower {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      @include g.sp {
+        font-size: 16px;
+      }
+    }
+  }
+  &__tel2 {
+    &-upper {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      margin-bottom: 1em;
+      @include g.sp {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+    }
+    &-list {
+      display: flex;
+      gap: 2em;
+      @include g.sp {
+        gap: 1.25em;
+      }
+    }
+    &-item {
+      &-school {
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 0.08em;
+        @include g.sp {
+          font-size: 14px;
+        }
+      }
+      a {
+        font-size: clamp(16px,1.823vw,35px);
+        letter-spacing: 0.08em;
+        color: #fff;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        // gap: 0.5rem;
+        white-space: nowrap;
+        @include g.sp {
+          font-size: 19px;
+        }
+        img {
+          width: 24px;
+          margin-right: 5px;
+          @include g.sp {
+            width: 14px;
+          }
+        }
+      }
+    }
+  }
+  &__links {
+    &-item {
+      &-contents {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 60px;
+        @include g.tb {
+          margin-bottom: 30px;
+        }
+        @include g.sp {
+          flex-direction: column;
+          margin-bottom: 23px;
+        }
+      }
+      &-title {
+        width: 40%;
+        font-size: clamp(24px,1.7vw,33px);
+        letter-spacing: 0.05em;
+        font-weight: bold;
+        line-height: 1;
+        @include g.sp {
+          width: 100%;
+          margin-bottom: 16px;
+        }
+        span {
+          white-space: nowrap;
+        }
+      }
+      &-text {
+        width: 57.5%;
+        letter-spacing: 0.05em;
+        line-height: 1.5625;
+        @include g.sp {
+          width: 100%;
+          font-size: 12px;
+        }
+      }
+      &-btn {
+        max-width: inherit !important;
+        a {
+          padding: 20.5px !important;
+          @include g.sp {
+            width: 263px !important;
+            margin: auto;
+            padding: 12px 0 !important;
+          }
+          &::before, &::after {
+            right: 2.6% !important;
+            @include g.sp {
+              right: 6.6% !important;
+            }
+          }
+        }
+      }
+      &:first-child {
+        margin-bottom: 67px;
+        @include g.sp {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+}

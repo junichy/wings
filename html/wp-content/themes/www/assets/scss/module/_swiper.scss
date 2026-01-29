@@ -1,0 +1,142 @@
+@use "../global" as g;
+
+/* swiper共通
+========================================= */
+
+// .swiper-container {
+//   position: relative;
+// }
+
+// .swiper-vertical > .swiper-scrollbar {
+//   position: absolute;
+//   right: 3px;
+//   top: 1%;
+//   width: 5px;
+//   height: 100%;
+// }
+
+/* TOP fv
+========================================= */
+.fv-swiper {
+  // height: 100vh !important;
+  //   padding-bottom: 30px !important;
+  //   @include g.tb {
+  //     padding-bottom: 0 !important;
+  //   }
+  @include g.sp {
+    height: 100% !important;
+  }
+  .swiper-wrapper {
+    transition-timing-function: linear;
+    @include g.sp {
+      height: 100% !important;
+    }
+  }
+  .swiper-slide {
+    height: calc(100vh - 43px) !important;
+    @include g.sp {
+      height: 100% !important;
+    }
+  }
+}
+.main-swiper {
+  // height: 100vh !important;
+  // // padding-bottom: 30px !important;
+  // // @include g.tb {
+  // //   padding-bottom: 0 !important;
+  // // }
+  // @include g.sp {
+  //   height: 100% !important;
+  // }
+  .swiper-wrapper {
+    transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-transition-timing-function: linear !important;
+    -o-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+    @include g.sp {
+      height: 100% !important;
+    }
+  }
+  .swiper-slide {
+    // height: calc(100vh - 43px) !important;
+    @include g.sp {
+      height: 100% !important;
+    }
+  }
+}
+/* TOP Instagram
+========================================= */
+.instagram-swiper {
+  max-height: 299px !important;
+  .swiper-wrapper {
+    transition-timing-function: linear;
+    // transform: inherit !important;
+    flex-wrap: nowrap !important;
+    overflow: visible !important;
+  }
+  .swiper-slide {
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: inherit !important;
+    @include g.sp {
+      border-radius: inherit;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .insta-gallery-feed[data-feed_layout="masonry"]
+    .insta-gallery-list
+    .insta-gallery-item,
+  [data-feed_layout="masonry"].qligg-mfp-wrap
+    .insta-gallery-list
+    .insta-gallery-item,
+  .insta-gallery-feed[data-feed_layout="gallery"]
+    .insta-gallery-list
+    .insta-gallery-item,
+  [data-feed_layout="gallery"].qligg-mfp-wrap
+    .insta-gallery-list
+    .insta-gallery-item {
+    min-width: calc(100% / 3) !important;
+  }
+}
+
+/* Blog archive SP //
+========================================= */
+.blog-swiper {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 37px;
+    height: 37px;
+    background-color: g.$blue;
+    border-radius: 50%;
+    top: 46%;
+    transform: translateY(-50%);
+    &::after {
+      display: none;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 19px;
+      height: 13px;
+      background: url(../img/common/icon_swiper-arrows-white.svg) no-repeat
+        center center / cover;
+    }
+  }
+  .swiper-button-prev {
+    left: 21% !important;
+    &::before {
+      transform: translate(-50%, -50%) rotate(-90deg);
+    }
+  }
+  .swiper-button-next {
+    right: 21% !important;
+    &::before {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+}

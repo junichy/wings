@@ -1,0 +1,155 @@
+@use "../global" as g;
+
+.sidebar {
+  &__title {
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-bottom: 36px;
+    @include g.sp {
+      font-size: 23px;
+      margin-bottom: 19px;
+    }
+    &-icon {
+      background-color: g.$orange;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      margin-right: 6px;
+      position: relative;
+      @include g.sp {
+        width: 23px;
+        height: 23px;
+      }
+      img {
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include g.sp {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+  &__articles {
+    &-list {
+      @include g.xl {
+        display: grid;
+        column-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+      }
+    }
+    &-item {
+      margin-bottom: 24px;
+      @include g.sp {
+        margin-bottom: 20px;
+      }
+      a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include g.xl {
+          flex-direction: column;
+        }
+      }
+      &-img {
+        width: 44%;
+        border-radius: 10px;
+        overflow: hidden;
+        @include g.aspect;
+        @include g.xl {
+          width: 100%;
+          margin-bottom: 8px;
+        }
+        &::before {
+          padding-top: 66%;
+          @include g.sp {
+            padding-top: 67.27%;
+          }
+        }
+      }
+      &-contents {
+        width: 54%;
+        padding-top: 4px;
+        @include g.xl {
+          width: 100%;
+        }
+      }
+      &-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 12px;
+        font-weight: 200;
+        &-cat {
+          background-color: g.$orange;
+          color: #fff;
+          padding: 3px 13px;
+          border-radius: 6px;
+          margin-right: 5px;
+          @include g.xl {
+            padding: 0px 5px;
+            margin-right: 9px;
+          }
+          &--news_ikejiri {
+            background-color: g.$orange;
+          }
+          &--news_gakugei {
+            background-color: g.$blue;
+          }
+        }
+        &-date {
+          @include g.sp {
+            font-size: 13px;
+          }
+        }
+      }
+      &-title {
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 1.692;
+      }
+    }
+  }
+  &__tags {
+    margin-top: 37px;
+    @include g.sp {
+      margin-top: 19px;
+    }
+    &-title {
+      margin-bottom: 8px;
+      @include g.sp {
+        margin-bottom: 20px;
+      }
+    }
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2%;
+      a {
+        display: block;
+        background-color: g.$bg-gray2;
+        font-size: 17px;
+        font-weight: 200;
+        letter-spacing: 0.072em;
+        padding: 8px 18px;
+        line-height: 1;
+        border-radius: 6px;
+        @include g.sp {
+          font-size: 11px;
+          padding: 5px 12px;
+          border-radius: 3px;
+        }
+        &::before {
+          content: '#';
+        }
+      }
+    }
+  }
+}

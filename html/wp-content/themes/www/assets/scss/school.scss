@@ -1,0 +1,869 @@
+@use "global" as g;
+
+/* sec_a-school
+====================================== */
+.sec_a-school {
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 139px;
+    padding-bottom: 88px;
+    @include g.xl {
+      padding-bottom: 0;
+    }
+    @include g.sp {
+      padding-top: 45px;
+    }
+  }
+  &__left {
+    width: 55%;
+    border-radius: 0 50px 50px 0;
+    box-shadow: 0 0 6px rgba(0, 0, 0 ,16%);
+    overflow: hidden;
+    @include g.sp {
+      border-radius: 0 20px 20px 0;
+    }
+    &--sp {
+      display: none;
+      @include g.xl {
+        width: 90%;
+        display: block;
+        position: relative;
+        z-index: 1;
+      }
+      @include g.sp {
+        width: 95%;
+      }
+    }
+  }
+  &__right {
+    width: 52%;
+    margin-left: -7%;
+    @include g.xl {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  &__title {
+    padding-right: 26.3%;
+    text-align: right;
+    margin-top: 21px;
+    margin-bottom: 88px;
+    @include g.xl {
+      padding-right: 0;
+      padding-left: g.$padding-pc;
+      text-align: left;
+      margin-top: 0;
+    }
+    @include g.sp {
+      margin-bottom: 10px;
+      padding-left: g.$padding-sp;
+    }
+    &-en {
+      font-family: g.$font-en;
+      font-size: 109px;
+      font-weight: bold;
+      color: g.$orange;
+      letter-spacing: 0.08em;
+      line-height: 0.95;
+      text-align: center;
+      max-width: 490px;
+      margin-left: auto;
+      margin-bottom: 3px;
+      @include g.xl {
+        margin-left: inherit;
+        text-align: left;
+      }
+      @include g.tb {
+        font-size: 77px;
+      }
+      @include g.sp {
+        font-size: 45px;
+      }
+    }
+    &-jp {
+      font-size: 42px;
+      font-weight: bold;
+      @include g.tb {
+        font-size: 30px;
+      }
+      @include g.sp {
+        font-size: 17px;
+      }
+    }
+  }
+  &__container {
+    background-color: g.$bg-gray;
+    border-radius: 47px 0 0 47px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0 ,16%);
+    padding: 93px 60px 76px;
+    @include g.xl {
+      border-radius: inherit;
+      box-shadow: none;
+      margin-top: -60px;
+      padding-top: 140px;
+    }
+    @include g.sp {
+      padding: 108px g.$padding-sp 32px;
+    }
+  }
+  &__catch {
+    border-top: 1px solid g.$blue;
+    border-bottom: 1px solid g.$blue;
+    padding-bottom: 30px;
+    text-align: center;
+    margin-bottom: 54px;
+    @include g.sp {
+      padding-bottom: 6px;
+      margin-bottom: 18px;
+    }
+    &-title {
+      display: inline-block;
+      font-size: 28px;
+      color: #fff;
+      font-weight: bold;
+      padding: 5px 47px;
+      border-radius: 115px;
+      background-color: g.$blue;
+      transform: translateY(-50%);
+      @include g.sp {
+        padding: 3px 25px;
+        font-size: 13px;
+      }
+    }
+    &-text {
+      margin-top: -10px;
+      margin-left: 49px;
+      @include g.sp {
+        margin-left: 0px;
+      }
+      span {
+        font-size: 46px;
+        font-weight: bold;
+        color: g.$orange;
+        vertical-align: middle;
+        @include g.sp {
+          font-size: 22px;
+        }
+      }
+      img {
+        width: auto;
+        height: auto;
+        margin-left: 8px;
+        @include g.sp {
+          width: 22.5px;
+          height: 22.5px;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  &__text {
+    font-size: 21px;
+    line-height: 1.952;
+    @include g.sp {
+      font-size: 13px;
+      line-height: 1.923;
+    }
+  }
+}
+
+
+/* sec_news
+====================================== */
+.sec_news {
+  background: url(../img/school/bg_sec_news.png) no-repeat center center / cover;
+  &__inner {
+    padding-top: 66px;
+    padding-bottom: 80px;
+    @include g.sp {
+      padding-top: 38px; 
+      padding-bottom: 46px; 
+    }
+  }
+  &__title {
+    margin-left: -63px;
+    @include g.sp {
+      margin-left: 0;
+    }
+    &-main {
+      margin-left: 0;
+    }
+  }
+}
+
+/* sec_course
+====================================== */
+.sec_course {
+  &__inner {
+    padding-top: 105px;
+    padding-bottom: 0;
+    @include g.sp {
+      padding-top: 47px;
+    }
+  }
+  &__title {
+    margin-bottom: 60px;
+    @include g.sp {
+      margin-bottom: 27px;
+    }
+  }
+  &__table {
+    margin-bottom: 105px;
+    overflow-x: scroll;
+    @include g.sp {
+      margin-bottom: 50px;
+    }
+    table {
+      border-radius: 20px;
+      overflow: hidden;
+      width: 100%;
+      // min-width: 1200px;
+      // border-collapse: collapse;
+      border-collapse: separate;
+      border-spacing: 0;
+      @include g.tb {
+      }
+      @include g.sp {
+        min-width: 580px;
+        border-radius: 10px;
+        padding-bottom: 1px;
+      }
+    }
+    &-blank {
+      background-color: g.$bg-gray;
+      border: 1px solid #fff;
+    }
+    &-orange {
+      // background-color: g.$orange;
+      color: #fff;
+      // font-size: 23px;
+      font-size: clamp(16px, 1.2vw, 23px);
+      font-weight: bold;
+      padding: 4.5px 0;
+      border: 1px solid #fff;
+      width: 17.77%;
+      @include g.tb {
+        width: 18%;
+        font-size: 10px;
+        padding: 2px 0;
+      }
+      @include g.sp {
+      }
+      &--01 {
+        background-color: #F8A719;
+      }
+      &--02 {
+        background-color: #F8AB19;
+      }
+      &--03 {
+        background-color: #F8B319;
+      }
+      &--04 {
+        background-color: #F8BC19;
+      }
+    }
+    &-half {
+      width: 8.889%;
+      @include g.tb {
+        width: 9%;
+      }
+    }
+    td {
+      font-size: clamp(14px, 1.2vw, 23px);
+      color: g.$blue;
+      font-weight: bold;
+      text-align: center;
+      padding: 9px;
+      border: 1px solid g.$blue;
+      // border-right: 1px solid g.$blue;
+      // border-bottom: 1px solid g.$blue;
+      line-height: 1;
+      @include g.tb {
+        font-size: 13px;
+        padding: 5px 0;
+      }
+      @include g.sp {
+        font-size: 10px;
+      }
+      span {
+        display: block;
+        line-height: 1.2;
+        &.mt10 {
+          margin-top: 10px;
+        }
+      }
+      .small {
+        font-size: clamp(10px, 0.73vw, 14px);
+        display: inline-block;
+        line-height: 1.57;
+        margin-top: 5px;
+        @include g.sp {
+          font-size: 6px;
+        }
+        &.mt0 {
+          margin-top: 0;
+        }
+      }
+    }
+    &-course {
+      background-color: g.$blue;
+      color: #fff !important;
+      line-height: 1;
+      text-align: left !important;
+      padding: 15px 30px !important;
+      border: 1px solid #fff !important;
+      @include g.tb {
+        padding: 8.4px 14px !important;
+      }
+      &-en {
+        display: block;
+        font-family: g.$font-en;
+        // font-size: 29px;
+        font-size: clamp(18px, 1.51vw, 29px);
+        font-weight: bold;
+        margin-bottom: 6px;
+        @include g.tb {
+          font-size: 13px;
+        }
+      }
+      &-jp {
+        display: block;
+        // font-size: 18px;
+        font-size: clamp(12px, 0.9375vw, 18px);
+        font-weight: 200;
+        @include g.tb {
+          font-size: 8px;
+        }
+      }
+    }
+    &-circle {
+      position: relative;
+      &::after { //青丸
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: g.$blue;
+        @include g.tb {
+          width: 23px;
+          height: 23px;
+        }
+      }
+    }
+    &-dots {
+      &-right {
+        border-right: 2px dotted #1CC1CC !important;
+        // border-right: none !important;
+        // background-image: linear-gradient(to bottom, g.$blue, g.$blue 5px, transparent 5px, transparent 11px);/* 右辺 */
+        // background-size: 5px 11px;/* 右辺 */
+        // background-repeat: repeat-y;/* 右辺 */
+        // background-position: right top;/* 右辺 */
+        @include g.sp {
+          border-right: 1px dotted #1CC1CC !important;
+        }
+      }
+      &-left {
+        // border-left: 5px dotted g.$blue !important;
+        border-left: none !important;
+      }
+    }
+    &-last_td {
+      border-radius: 0 0 20px 0;
+    }
+  }
+  &__wrapper {
+    margin: 0 calc(50% - 50vw);
+  }
+  &__list {
+
+  }
+  &__item {
+    display: flex;
+    @include g.tb {
+      flex-direction: column;
+    }
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+      @include g.tb {
+        flex-direction: column;
+      }
+    }
+    &-image {
+      width: 56.3%;
+      display: flex;
+      flex-direction: column;
+      @include g.tb {
+        width: 100%;
+      }
+      &-wrapper {
+        height: 100%;
+      }
+      &-info {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        padding: 19.5px 5.5%;
+        background-color: g.$bg-gray;
+        @include g.tb {
+          display: none;
+        }
+        &-course {
+          font-family: g.$font-en;
+          font-size: 30px;
+          color: g.$orange;
+          font-weight: bold;
+          margin-right: 20px;
+        }
+        &-age {
+          font-size: 21px;
+          background-color: g.$orange;
+          color: #fff;
+          padding: 1px 19px;
+          border-radius: 6px;
+        }
+      }
+    }
+    &-contents {
+      width: 43.7%;
+      background: linear-gradient(to 60deg, g.$green, g.$blue);
+      padding: 66px 6% 60px 3.7%;
+      @include g.tb {
+        width: 100%;
+        padding: 27px g.$padding-sp 40px;
+      }
+      &--06 {
+        background: linear-gradient(to bottom, #F8A719, #F8BC19);
+      }
+    }
+    &-title {
+      color: #fff;
+      margin-bottom: 28px;
+      position: relative;
+      display: inline-block;
+      // padding-right: 123px;
+      @include g.sp {
+        margin-bottom: 13px;
+      }
+      &-en {
+        font-family: g.$font-en;
+        font-size: clamp(24px, 2.76vw, 53px);
+        line-height: 1.1;
+        font-weight: bold;
+        @include g.sp {
+          font-size: 30px;
+        }
+      }
+      &-jp {
+        font-size: clamp(12px, 0.9895vw,19px);
+        font-weight: bold;
+        @include g.sp {
+          font-size: 15px;
+        }
+      }
+      &-circle {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(120%, -50%);
+        width: clamp(80px, 4.95vw,95px);
+        height: clamp(80px, 4.95vw,95px);
+        border-radius: 50%;
+        background-color: g.$orange;
+        border: 1px solid #fff;
+        text-align: center;
+        @include g.sp {
+          width: 62px;
+          height: 62px;
+        }
+        // padding-top: 22px;
+        span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: clamp(14px, 0.9375vw, 18px);
+          font-weight: bold;
+          color: #fff;
+          width: 100%;
+          @include g.sp {
+            font-size: 10px;
+          }
+        }
+        &--06 {
+          background-color: g.$blue;
+        }
+      }
+    }
+    &-info {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: clamp(13px, 1.09vw,21px);
+      margin-bottom: 13px;
+      @include g.sp {
+        font-size: 14px;
+        margin-bottom: 11px;
+      }
+      &-note {
+        color: g.$orange;
+        background-color: #fff;
+        border: 1px solid g.$orange;
+        border-radius: 6px;
+        padding: 2px 10px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+        white-space: nowrap;
+        font-size: 0.9em;
+        @include g.sp {
+          padding: 2px 11px;
+          border-radius: 3px;
+          margin-right: 5px;
+        }
+      }
+      &-age {
+        color: #fff;
+        background-color: g.$orange;
+        border: 1px solid #fff;
+        border-radius: 6px;
+        padding: 1px 18px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+        @include g.sp {
+          padding: 2px 13px;
+          border-radius: 3px;
+          margin-right: 10px;
+        }
+        &--06 {
+          background-color: g.$blue;
+        }
+      }
+      &-time {
+        margin-bottom: 10px;
+        span {
+          display: inline-block;
+          color: g.$orange;
+          background-color: #fff;
+          border: 1px solid g.$orange;
+          border-radius: 6px;
+          padding: 2px 18px;
+          margin-right: 15px;
+          @include g.sp {
+            padding: 2px 11px;
+            border-radius: 3px;
+            margin-right: 5px;
+          }
+        }
+        &--06 {
+          span {
+            color: g.$blue;
+          }
+        }
+      }
+    }
+    &-text {
+      font-size: clamp(13px, 1.09vw,21px);
+      line-height: 1.952;
+      color: #fff;
+      margin-bottom: 75px;
+      @include g.tb {
+        margin-bottom: 34px;
+      }
+      @include g.sp {
+        font-size: 14px;
+        line-height: 1.71;
+      }
+    }
+    &-btn {
+      margin-left: inherit;
+      max-width: 313px;
+      @include g.tb {
+        margin-left: auto;
+      }
+      @include g.sp {
+        max-width: 263px;
+      }
+      a {
+        padding: 11.5px;
+      }
+    }
+  }
+}
+
+/* sec_gallery
+====================================== */
+.sec_gallery {
+  &__inner {
+    position: relative;
+    padding-top: 101px;
+    padding-bottom: 30px;
+    @include g.sp {
+      padding-top: 44px;
+      padding-bottom: 20px;
+    }
+  }
+  &__title {
+    margin-bottom: 50px;
+    @include g.sp {
+      margin-bottom: 19px;  
+    }
+  }
+  &__catch {
+    position: absolute;
+    left: -326px;
+    top: 50%;
+    transform: translateY(-22%) rotate(-90deg);
+    font-family: g.$font-en;
+    color: g.$orange;
+    opacity: 0.34;
+    font-size: 212px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    @include g.sp {
+      display: none;
+    }
+  }
+  &__container {
+    overflow: hidden;
+  }
+  &__upper {
+    margin-bottom: 12px;
+    @include g.sp {
+      margin-bottom: 2px;
+    }
+  }
+  &__lower {
+    .swiper-wrapper {
+      justify-content: space-between;
+      .swiper-slide {
+        width: 19.4% !important;
+        height: 100%;
+        // opacity: .5;
+        overflow: hidden;
+        &.swiper-slide-thumb-active {
+            // opacity: 1;
+        }
+        & + .swiper-slide {
+          // margin-left: 2.5%;
+        }
+      }
+    }
+  }
+  .swiper-slide {
+    @include g.aspect;
+    img {
+      border-radius: 8px;
+    }
+    &::before {
+      padding-top: 47%;
+    }
+  }
+}
+.swiper-container {
+  width: 100%;
+}
+.swiper-button-next, .swiper-button-prev {
+  &::after {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+/* sec_bus
+====================================== */
+.sec_bus {
+  &__inner {
+    padding-top: 73px;
+    padding-bottom: 30px;
+    @include g.sp {
+      padding-top: 29px;
+      padding-bottom: 30px;
+    }
+  }
+  &__title {
+    margin-bottom: 56px;
+    @include g.sp {
+      margin-bottom: 23px;
+    }
+  }
+  &__table {
+    overflow-x: scroll;
+    table {
+      border-radius: 20px;
+      overflow: hidden;
+      width: 100%;
+      min-width: 620px;
+      // border-collapse:collapse;
+      border-spacing: 0;
+      margin-bottom: 14px;
+      @include g.sp {
+        margin-bottom: 5px;
+      }
+    }
+    &-blank {
+      background-color: g.$bg-gray;
+      border: 1px solid #fff;
+    }
+    &-orange {
+      background-color: g.$orange;
+      color: #fff;
+      font-size: 26px;
+      font-weight: bold;
+      padding: 25px 10px;
+      border: 1px solid #fff;
+      width: 21.6%;
+      @include g.tb {
+        font-size: 13px;
+        padding: 15px 0;
+      }
+      @include g.sp {
+        width: 23%;
+        padding: 13.5px 0;
+      }
+      &:nth-child(2) {
+        background-color: #F8A719;
+      }
+      &:nth-child(3) {
+        background-color: #F8AB19;
+      }
+      &:nth-child(4) {
+        background-color: #F8B319;
+      }
+    }
+    &-blue {
+      font-size: 26px !important;
+      font-weight: bold;
+      color: #fff !important;
+      text-align: center;
+      background-color: g.$blue;
+      padding: 20px;
+      border: 1px solid #fff !important;
+      @include g.tb {
+        font-size: 13px !important;
+        padding: 15px;
+      }
+      @include g.sp {
+        padding: 10px;
+      }
+      span {
+        font-size: 0.6em;
+      }
+    }
+    td {
+      border: 1px solid g.$blue;
+      color: #9A9A9A;
+      font-size: 19px;
+      padding: 21px;
+      line-height: 1.526;
+      @include g.tb {
+        font-size: 12px;
+        padding: 10px;
+      }
+      @include g.sp {
+        line-height: 1.333;
+        padding: 7px;
+      }
+    }
+    &-last_td {
+      border-radius: 0 0 20px 0;
+    }
+    &-note {
+      font-size: 19px;
+      font-weight: bold;
+      margin-left: 4px;
+      @include g.tb {
+        font-size: 12px;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+
+/* sec_access
+====================================== */
+.sec_access {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 70px;
+    padding-bottom: 178px;
+    @include g.tb {
+      flex-direction: column;
+    }
+    @include g.sp {
+      padding-top: 34px;
+      padding-bottom: 95px;
+    }
+  }
+  &__title {
+    margin-bottom: 20px;
+  }
+  &__contents {
+    width: 47.5%;
+    display: flex;
+    flex-direction: column;
+    @include g.tb {
+      width: 100%;
+      margin-bottom: 22px;
+    }
+  }
+  &__map {
+    width: 50%;
+    @include g.tb {
+      width: 100%;
+    }
+  }
+  &__list {
+    margin-top: auto;
+  }
+  &__item {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 7.5px;
+    @include g.sp {
+      margin-bottom: 7px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &-title, &-text {
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 4px;
+      @include g.sp {
+        font-size: 11px;
+      }
+    }
+    &-title {
+      width: 17.5%;
+      background-color: g.$blue;
+      color: #fff;
+      text-align: center;
+      padding: 13px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include g.sp {
+        width: 21.3%;
+        padding: 7px;
+      }
+    }
+    &-text {
+      width: 82.5%;
+      background-color: g.$bg-gray;
+      padding: 13px 20px;
+      @include g.sp {
+        width: 78.7%;
+        padding: 7px 10px;
+      }
+    }
+  }
+}

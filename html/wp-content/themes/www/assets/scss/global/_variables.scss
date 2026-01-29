@@ -1,0 +1,33 @@
+///////////////// Font ///////////////////
+$base_font: "DNP 秀英丸ゴシック Std", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+$font-en: "Brandon Grotesque";
+$font-noto: "Noto Sans JP";
+
+///////////////// Colors ///////////////
+
+// Color
+$font-black: #000000;
+$font-gray: #8D8D8D;
+$bg-gray: #F4F4F4;
+$bg-gray2: #EFEFEF;
+$red: #E60112;
+$blue: #40C1C9;
+$orange: #F6A631;
+$green: #40C9AF;
+
+//Base Font Color
+$base_font_color: $font-black;
+
+
+
+///////////////// Contents ///////////////
+
+// コンテンツの大きさ（左右パディング含まない）
+$contents-size: 1400px;
+$contents-size-s: 1260px;
+// 左右のパディングの大きさ
+$padding-pc: 10%;
+$padding-tb:  6%;
+$padding-sp:  5.128%;
+// 左右のパディングを含めたコンテンツの最大幅
+$max-contents: calc($contents-size + $padding-pc * 2);

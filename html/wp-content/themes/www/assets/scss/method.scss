@@ -1,0 +1,333 @@
+@use "global" as g;
+
+/* sec_environment
+====================================== */
+.sec_environment {
+  &__inner {
+    padding-top: 78px;
+    padding-bottom: 91px;
+    @include g.sp {
+      padding-top: 50px;
+      padding-bottom: 38px;
+    }
+  }
+  &__title {
+    margin-bottom: 44px;
+    @include g.sp {
+      margin-bottom: 16px;
+    }
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include g.xl {
+      flex-direction: column;
+    }
+  }
+  &__img {
+    width: 46%;
+    margin-left: -0.4%;
+    @include g.xl {
+      width: 100%;
+      max-width: 468px;
+      margin: 0 auto 30px;
+    }
+    @include g.sp {
+      max-width: 283px;
+      margin: 0 auto 17px; 
+    }
+  }
+  &__text {
+    width: 53.28%;
+    font-size: 21px;
+    line-height: 1.952;
+    margin-top: 2.5%;
+    @include g.xl {
+      width: 100%;
+      margin-top: 0;
+    }
+    @include g.sp {
+      font-size: 12px;
+      line-height: 1.667;
+    }
+  }
+}
+
+/* sec_nurture
+====================================== */
+.sec_nurture {
+  &__upper {
+    background: url(../img/method/bg_sec_nurture.jpg) no-repeat center center / cover;
+    position: relative;
+    z-index: 0;
+    &::before { //背景黒フィルター
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(103, 102, 101, 0.82);
+    }
+    &-inner {
+      padding-top: 88px;
+      padding-bottom: 89px;
+      @include g.sp {
+        padding-top: 27px;
+        padding-bottom: 52px;
+      }
+    }
+  }
+  &__title {
+    color: #fff;
+    margin-bottom: 57px;
+    @include g.sp {
+      margin-bottom: 20px;
+    }
+    &-main {
+      margin-bottom: 4px;
+      line-height: 1.24;
+      @include g.sp {
+        line-height: 1.18;
+        &-left {
+          margin-left: 30px;
+        }
+      }
+    }
+    &-sub {
+      color: #fff;
+    }
+  }
+  &__lead {
+    color: #fff;
+    font-size: clamp(12px, 1.5vw, 26px);
+    line-height: 1.692;
+    text-align: center;
+    @include g.sp {
+      line-height: 1.667;
+    }
+  }
+  &__lower {
+    background-color: g.$bg-gray;
+    &-inner {
+      padding-top: 90px;
+      padding-bottom: 83px;
+      @include g.sp {
+        padding-top: 55px;
+        padding-bottom: 46px;
+      }
+    }
+  }
+  &__list {
+    display: grid;
+    column-gap: 12.4%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    @include g.xl {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__item {
+    position: relative;
+    @include g.xl {
+      padding-bottom: 120px;
+      margin-bottom: 60px !important;
+      &:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0 !important;
+      }
+    }
+    @include g.sp {
+      padding-bottom: 53px;
+      margin-bottom: 25px !important;
+
+    }
+    &:nth-child(1), &:nth-child(2) {
+      margin-bottom: 133px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 167px;
+      height: 60px;
+      background-image: linear-gradient(to bottom, g.$blue, g.$green);
+      clip-path: polygon(0 0, 50% 100%, 100% 0);
+      @include g.sp {
+        height: 35px;
+      }
+    }
+    &:nth-child(1) {
+      &::after { //右三角▶
+        top: 52%;
+        right: -29%;
+        transform: rotate(-90deg);
+        @include g.xl {
+          top: inherit;
+          right: inherit;
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    &:nth-child(2) {
+      &::after { //下三角▼
+        left: 50%;
+        transform: translate(-61%, 44%);
+        @include g.xl {
+          bottom: 0;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    &:nth-child(3) {
+      order: 4;
+      @include g.xl {
+        order: 0;
+      }
+      &::after { //左三角◀
+        top: 42%;
+        left: -29%;
+        transform: rotate(90deg);
+        @include g.xl {
+          top: inherit;
+          right: inherit;
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    &:nth-child(4) {
+      &::after {
+        display: none;
+      }
+    }
+    &-title {
+      font-size: 37px;
+      font-weight: bold;
+      line-height: 1.162;
+      color: #fff;
+      text-align: center;
+      padding: 13px;
+      background: linear-gradient(to bottom, g.$blue, g.$green);
+      border-radius: 10px;
+      margin-bottom: 37px;
+      @include g.sp {
+        font-size: 19px;
+        margin-bottom: 18px;
+        border-radius: 6px;
+      }
+    }
+    &-video {
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 15px;
+      @include g.aspect;
+      &::before {
+        padding-top: 62.6%;
+      }
+      @include g.sp {
+        border-radius: 10px;
+        margin-bottom: 9px;
+      }
+    }
+    &-text {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.833;
+      @include g.sp {
+        span {
+          white-space: nowrap;
+        }
+      }
+      @include g.sp {
+        font-size: 15px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+/* sec_flow
+====================================== */
+.sec_flow {
+  &__inner {
+    padding-top: 79px;
+    padding-bottom: 72px;
+    @include g.sp {
+      padding-top: 50px;
+      padding-bottom: 68px;
+    }
+  }
+  &__title {
+    margin-bottom: 22px;
+    @include g.tb {
+      text-align: center;
+    }
+    @include g.sp {
+      margin-bottom: 23px;
+    }
+    img {
+      margin-left: 12px;
+      @include g.sp {
+        width: 17.5px;
+        margin-left: 4px;
+      }
+    }
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include g.tb {
+      flex-direction: column-reverse;
+    }
+  }
+  &__contents {
+    width: 51.5%;
+    @include g.tb {
+      width: 100%;
+    }
+  }
+  &__text {
+    font-size: 24px;
+    line-height: 1.4166;
+    margin-bottom: 50px;
+    @include g.sp {
+      font-size: 12px;
+      line-height: 1.667;
+      margin-bottom: 29px;
+    }
+    span {
+      display: block;
+      margin-bottom: 34px;
+      @include g.sp {
+        margin-bottom: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__img {
+    width: 43.65%;
+    @include g.tb {
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 60px;
+    }
+    @include g.sp {
+      margin-bottom: 18px;
+    }
+  }
+  &__btn {
+    margin-left: inherit;
+    @include g.tb {
+      margin-left: auto;
+    }
+  }
+}

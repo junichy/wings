@@ -1,0 +1,45 @@
+@use "../global" as g;
+/* utility 
+====================================== */
+
+// common class
+.xl_only {
+  @include g.xl {
+    display: none;
+  }
+}
+.pc_only {
+  @include g.tb() {
+    display: none;
+  }
+}
+.sp_only {
+  display: none;
+  @include g.sp() {
+    display: block;
+  }
+}
+.tb_only {
+  display: none;
+  @include g.tb() {
+    display: block;
+  }
+  @include g.sp() {
+    display: none;
+  }
+}
+.pc_tb {
+  @include g.sp() {
+    display: none;
+  }
+}
+.tb_sp {
+  display: none;
+  @include g.tb() {
+    display: block;
+  }
+}
+
+.full-size {
+  margin: 0 calc(50% - 50vw);
+}

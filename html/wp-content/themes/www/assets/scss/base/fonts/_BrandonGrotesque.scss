@@ -1,0 +1,19 @@
+///// BrandonGrotesque /////
+
+// Regular
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url('../fonts/BrandonGrotesque_R.woff2') format('woff2');
+}
+// Bold
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url('../fonts/BrandonGrotesque_B.woff2') format('woff2');
+  font-weight: bold;
+}
+// Black
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url('../fonts/BrandonGrotesque_BK.woff2') format('woff2');
+  font-weight: 900;
+}

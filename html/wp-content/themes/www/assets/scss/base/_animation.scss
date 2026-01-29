@@ -1,0 +1,386 @@
+@use "../global" as g;
+/* ------------------------------------------
+アニメーション
+------------------------------------------- */
+
+/* タイトルスライドイン
+========================================= */
+.slide-in {
+	overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+}
+.slide-in_inner {
+	display: inline-block;
+  vertical-align: top;
+}
+// 左→右のアニメーション
+.leftAnime{
+  opacity: 0; // 事前に透過0にして消しておく
+}
+.slideAnimeLeftRight {
+	animation-name: slideTextX100;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes slideTextX100 {
+  from {
+    transform: translateX(-100%); // 要素を左の枠外に移動
+    opacity: 0;
+  }
+  to {
+	  transform: translateX(0); // 要素を元の位置に移動
+    opacity: 1;
+  }
+}
+.slideAnimeRightLeft {
+	animation-name: slideTextX-100;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes slideTextX-100 {
+  from {
+	  transform: translateX(100%); // 要素を右の枠外に移動
+    opacity: 0;
+  }
+  to {
+	transform: translateX(0); // 要素を元の位置に移動
+    opacity: 1;
+  }
+}
+
+
+
+/* svg 線を描くアニメーション */
+.stroke path {
+  // fill: #eee;
+  fill: #fff;
+  stroke: transparent;
+  opacity: 0;
+}
+.is-stroke path {
+  animation: stroke 2s ease-in-out forwards; 
+  // stroke: rgba(205, 92, 92, 0.5);
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 0;
+  stroke-width: 2;
+}
+@keyframes stroke {
+  0% {
+    // fill: #eee;
+    // fill: #fff;
+    opacity: 1;
+    fill: transparent;
+    stroke-dashoffset: 1600;
+  }
+  10% {
+    fill: transparent;
+  }
+  80% {
+    fill: transparent;
+  }
+  100% {
+    // fill: indianred;
+    opacity: 1;
+    fill: #fff;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ぼかしフェードイン
+======================================== */
+.blur {
+  opacity: 0;
+}
+.is-blur {
+	animation-name:blurAnime;
+	animation-duration:1s;
+	animation-fill-mode:forwards;
+  opacity: 0;
+}
+
+@keyframes blurAnime{
+  from {
+    filter: blur(10px);
+    transform: translate(20px, -20px) scale(1.02);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* ふわふわ
+======================================== */
+.anime-upDown {
+  animation: 3s upDown infinite;
+}
+
+@keyframes upDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+
+/* フェードイン（基本）
+======================================== */
+// .fadeIn,.fadeUpDown, .fadeLeftRight, .fadeRightLeft, .fadeInOpacity { // ←このクラスを付与
+.fadeIn, .fadeUpDown, .fadeLeftRight, .fadeRightLeft, .fadeInOpacity, // ←このクラスを付与
+.fadeInSP, .fadeUpDownSP, .fadeLeftRightSP, .fadeRightLeftSP
+{ 
+  opacity: 0;
+  animation-fill-mode: forwards;
+  transition: opacity 1s, visibility 1s, transform 1s;
+}
+.fadeIn_PC_TB {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  transition: opacity 1s, visibility 1s, transform 1s;
+  @include g.sp {
+    opacity: 1;
+  }
+}
+
+//　下から上　//
+.is-fadeIn {
+  animation-name:fadeInAnime;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+@keyframes fadeInAnime{
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  } 
+}
+//　下から上(SP)　//
+.is-fadeInSP {
+  animation-name:fadeInAnimeSP;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+@keyframes fadeInAnimeSP{
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  } 
+}
+
+//　上から下　//
+.is-fadeUpDown {
+  animation-name:fadeUpDownAnime;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+@keyframes fadeUpDownAnime{
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  } 
+}
+//　上から下(SP)　//
+.is-fadeUpDownSP {
+  animation-name:fadeUpDownAnimeSP;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+@keyframes fadeUpDownAnimeSP{
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  } 
+}
+
+// 左から右　//
+.is-fadeLeftRight {
+  animation-name:fadeLeftRightAnime;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+@keyframes fadeLeftRightAnime{
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  } 
+}
+// 左から右(SP)　//
+.is-fadeLeftRightSP {
+  animation-name:fadeLeftRightAnimeSP;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+@keyframes fadeLeftRightAnimeSP{
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  } 
+}
+
+// 右から左 //
+.is-fadeRightLeft {
+  animation-name:fadeRightLeftAnime;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+@keyframes fadeRightLeftAnime{
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+// 右から左(SP) //
+.is-fadeRightLeftSP {
+  animation-name:fadeRightLeftAnimeSP;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+@keyframes fadeRightLeftAnimeSP{
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+
+// オパシティーのみ
+.is-fadeInOpacity {
+  animation-name:fadeInOpacityAnime;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+@keyframes fadeInOpacityAnime{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  } 
+}
+
+
+/* フェードイン（時間差）
+======================================== */
+// 時間差にしたい要素の親要素に「.delayScroll」を指定
+.delayScroll > * { 
+  opacity: 0;
+}
+.fadeUp {
+  animation-name:fadeUpAnime;
+  animation-duration: 1s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  } 
+}
+.fadeUpSP {
+  animation-name:fadeUpAnimeSP;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+@keyframes fadeUpAnimeSP{
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  } 
+}
+
+/*　遅延時間
+======================================== */
+.delay-time05s{
+  animation-delay: .5s;
+}
+.delay-time1s{
+  animation-delay: 1s;
+}
+.delay-time_n1{
+  animation-delay: 1s;
+}
+.delay-time_n2{
+  animation-delay: 1.5s;
+}
+.delay-time_n3{
+  animation-delay: 2.5s;
+}
+.delay-time_n4{
+  animation-delay: 3.5s;
+}
+

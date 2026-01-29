@@ -1,0 +1,25 @@
+# All files ignored by default
+*
+
+# Only track theme
+!.gitignore
+!html/
+html/*
+!html/wp-content/
+html/wp-content/*
+!html/wp-content/themes/
+html/wp-content/themes/*
+!html/wp-content/themes/www/
+!html/wp-content/themes/www/**
+
+# Ignore sensitive/unnecessary files within theme
+.DS_Store
+**/.DS_Store
+*.log
+*.sql
+*.wpress
+
+# Backups
+database-management/
+*.crdownload
+www.wingskidsfamily.com-*/

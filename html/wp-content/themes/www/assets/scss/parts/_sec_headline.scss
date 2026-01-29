@@ -1,0 +1,62 @@
+@use "../global" as g;
+
+
+/* headline
+========================================= */
+.headline {
+  background-color: #fff;
+  &__inner {
+    padding-right: 13.54%;
+    position: relative;
+    z-index: 0; 
+    &::after { //オレンジ背景
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1;
+      display: block;
+      width: 58%;
+      height: 29.5vw;
+      background-color: g.$orange;
+    }
+    @media (max-width:1280px) {
+      padding-right: inherit;
+    }
+  }
+  &__img {
+    position: relative;
+    &::before { //画像フィルター（オレンジ）
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right top, rgba(246, 166, 49, 0%) 0%, rgba(246, 166, 49, 15%) 80%, rgba(246, 166, 49, 100%) 100% );
+      border-radius: 0 0 100px 0;
+    }
+  }
+  &__title {
+    font-weight: bold;
+    position: absolute;
+    top: 36%;
+    right: 3.125%;
+    color: #fff;
+    text-align: right;
+    @media (max-width:1280px) {
+      top: 45%;
+    }
+    &-en {
+      font-family: g.$font-en;
+      // font-size: 131px;
+      font-size: min(7vw, 131px);
+      line-height: 1.3;
+    }
+    &-jp {
+      // font-size: 43px;
+      font-size: min(2.3vw, 43px);
+    }
+  }
+}

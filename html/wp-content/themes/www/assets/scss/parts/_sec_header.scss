@@ -1,0 +1,726 @@
+@use "../global" as g;
+
+/*------------------------------------------------
+ header 
+-------------------------------------------------*/
+/* 固定ヘッダー
+======================================== */
+.header {
+  &__inner {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    // padding: 30px 3%;
+
+    @include g.sp() {
+    }
+    // &::before { //ドロップダウン青背景
+    //   content: '';
+    //   position: absolute;
+    //   top: 46px;
+    //   left: calc(15.9vw + 4% - 58px);
+    //   z-index: 2;
+    //   // display: block;
+    //   display: none;
+    //   opacity: 0;
+    //   width: 65.6vw;
+    //   max-width: 1260px;
+    //   height: 330px;
+    //   background: linear-gradient(to left bottom, g.$blue, #40C9A4);
+    //   border-radius: 50px;
+    //   transition: 0.3s;
+    // }
+    &.is-dropdown-open {
+      .header__mask {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  &__logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 15.9vw;
+    max-width: 306px;
+    margin-right: 4%;
+    @include g.tb {
+      width: 27.4%;
+      max-width: 155px;
+      min-width: 87px;
+      z-index: 6;
+    }
+    @include g.sp {
+      width: 87px;
+    }
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+    }
+  }
+  &__nav {
+    position: fixed;
+    top: 36px;
+    left: 50%;
+    z-index: 5;
+    transform: translateX(-50%);
+    width: 65.6vw;
+    max-width: 1260px;
+    margin: auto;
+    // padding: 0 2vw;
+    padding: 0 1vw;
+    background-color: #fff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 16%);
+    border-radius: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.5vw;
+    @include g.xl {
+      left: 20vw;
+      width: 77vw;
+      transform: inherit;
+    }
+    @include g.tb {
+      position: relative;
+      top: inherit;
+      left: inherit;
+      transform: none;
+      width: 100%;
+      margin: inherit;
+      padding: 0;
+      border-radius: inherit;
+      background-color: inherit;
+      box-shadow: none;
+    }
+    &-sp_container {
+      display: none;
+      @include g.tb {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        // display: block;
+        margin: inherit;
+        width: 100vw;
+        height: 100%;
+        padding: 150px 5.12vw 90px;
+        background: url(../img/common/drower_bg.jpg) no-repeat center center /
+          cover;
+      }
+      @include g.sp {
+        padding: 123px 5.12vw;
+      }
+      &::before {
+        //ドロワーメニュー背景フィルター（青）
+        @include g.tb {
+          content: "";
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            to bottom,
+            rgba(64, 193, 201, 92%),
+            g.$green
+          );
+        }
+      }
+      &-inner {
+        max-width: 400px;
+        margin: auto;
+      }
+    }
+    &-list {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2vw;
+      // padding: 29px 0;
+      padding: 1.505vw 0;
+      &.tb_sp {
+        display: none;
+      }
+      @include g.tb() {
+        // display: none;
+        // display: block;
+        width: 100%;
+        position: relative;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 0;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        padding: 0;
+        margin-bottom: 12px;
+        &.pc_only {
+          display: none;
+        }
+        &.tb_sp {
+          display: grid;
+          // display: flex;
+        }
+      }
+      // &:hover {
+      //   .header__nav-item >a {
+      //     opacity: 0.5;
+      //   }
+      // }
+    }
+    &-item {
+      white-space: nowrap;
+      @include g.tb {
+        white-space: inherit;
+        margin-bottom: 14px;
+        // width: 50%;
+        &:nth-child(2) {
+          // 2番目(校舎紹介)
+          grid-column: 2 / 3;
+          grid-row: 1 / 3;
+        }
+        &:nth-child(2),
+        &:nth-child(5),
+        &:nth-child(7) {
+          padding-left: 5.8%;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      > a {
+        display: block;
+        font-weight: bold;
+        font-size: clamp(14px, 1vw, 18px);
+        // padding: 12px 0;
+        padding: 0.6305vw 0;
+        text-align: center;
+        line-height: 1;
+        position: relative;
+        z-index: 0;
+        transition: color 0.3s ease, opacity 0.3s ease;
+        @include g.tb {
+          color: #fff;
+          padding: 0;
+          text-align: left;
+          font-size: 14px;
+          margin-bottom: 18px;
+        }
+        &::before {
+          // ドロップダウンまでの間を埋めるボックス
+          content: "";
+          position: absolute;
+          left: -10vw;
+          top: 100%;
+          width: 50vw;
+          height: calc(60px - max(1.25vw, 16px));
+          cursor: pointer;
+          visibility: hidden;
+          @include g.tb {
+            display: none;
+          }
+        }
+        &::after {
+          //ホバー時下線
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -1px;
+          display: block;
+          width: 100%;
+          height: 3px;
+          border-radius: 5px;
+          background-color: g.$orange;
+          transform: scale(0, 1);
+          transform-origin: left top;
+          transition: transform 0.3s;
+          @include g.tb {
+            display: none;
+          }
+        }
+        &:hover {
+          &::after {
+            transform: scale(1, 1);
+          }
+        }
+        // &:hover {
+        //   opacity: 1 !important; // ホバー中明るく
+        //   color: g.$red;
+        // }
+      }
+      &.is-open {
+        > a {
+          // opacity: 1 !important; // カーソルがドロップダウン内でもメニュー明るく
+          // color: g.$red;
+          &::before {
+            visibility: visible; // ドロップダウンが開いたときだけホバー可能
+          }
+          &::after {
+            transform: scale(1, 1);
+            @include g.tb {
+              transform: inherit;
+            }
+          }
+        }
+      }
+      &-title {
+        &-en,
+        &-jp {
+          display: block;
+        }
+        &-en {
+          @include g.tb {
+            font-family: g.$font-en;
+            margin-bottom: 5px;
+          }
+        }
+        &-jp {
+          @include g.tb {
+            font-size: 16px;
+          }
+        }
+      }
+      // &.is-current {
+      //   >a {
+      //     color: g.$red;
+      //   }
+      // }
+    }
+    &-sns {
+      width: 17%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &.tb_sp {
+        display: none;
+      }
+      @include g.tb {
+        &.pc_only {
+          display: none;
+        }
+        &.tb_sp {
+          display: flex;
+        }
+      }
+      &-icon {
+        width: 20%;
+        @include g.tb {
+          margin-right: 31px;
+        }
+        a {
+          transition: 0.3s;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+        img {
+          width: 100%;
+          // width: auto;
+          height: auto;
+        }
+      }
+    }
+    /* ドロップダウン */
+    &-dropdown {
+      // position: relative;
+      &:hover {
+        > .header__nav-dropdown__list {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+      @include g.tb {
+        // display: none;
+      }
+      &__list {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        z-index: -1;
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility 0.3s ease, opacity 0.3s ease;
+        padding: 117px 60px 30px;
+        width: 65.6vw;
+        max-width: 1260px;
+        border-radius: 50px;
+        background: linear-gradient(to left bottom, g.$blue, #40c9a4);
+        display: flex;
+        align-items: center;
+        gap: 2.6vw;
+        @include g.tb {
+          position: relative;
+          top: inherit;
+          z-index: 0;
+          padding: 0;
+          width: auto;
+          border-radius: inherit;
+          background: none;
+          display: block;
+          opacity: 1;
+          visibility: visible;
+        }
+        &::after {
+          //ホバー時メニュー白背景
+          content: "";
+          position: absolute;
+          top: -10px;
+          left: 0;
+          display: block;
+          width: 65.6vw;
+          max-width: 1260px;
+          // height: calc(16px + 12px * 2 + 1.505vw * 2);
+          height: calc(clamp(14px, 1vw, 18px) + 1.261vw + 3.01vw);
+          background-color: #fff;
+          border-radius: 100px;
+          box-shadow: 0 0 6px rgba(0, 0, 0, 16%);
+          @media (max-width: 1280px) {
+            width: 77vw;
+          }
+          @include g.tb {
+            display: none;
+          }
+        }
+        // &--school {
+        // }
+      }
+      &__item {
+        @include g.tb {
+          margin-bottom: 10px;
+          white-space: nowrap;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        a {
+          display: block;
+          // padding: 15px 2vw;
+          width: 100%;
+          font-size: 17px;
+          background-color: #fff;
+          border-radius: 10px;
+          overflow: hidden;
+          @include g.tb {
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            border-radius: inherit;
+            background-color: inherit;
+            padding-left: 16px;
+            position: relative;
+
+            &::before {
+              //孫白横棒
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              display: block;
+              width: 13px;
+              height: 1px;
+              background-color: #fff;
+            }
+          }
+          &:hover {
+            color: g.$orange;
+            @include g.tb {
+              color: #fff;
+            }
+            img {
+              transform: scale(1.15);
+            }
+          }
+          img,
+          span {
+            display: block;
+          }
+          img {
+            transition: 0.3s;
+          }
+          span {
+            position: relative;
+            text-align: center;
+            // font-size: 1px;
+            padding: 12px 0;
+            font-weight: bold;
+            background-color: #fff;
+            @include g.tb {
+              padding: 0;
+              text-align: left;
+              background-color: inherit;
+            }
+          }
+        }
+        &-btn {
+          a {
+            padding: 10px 18px !important;
+            span {
+              display: inline-block;
+              font-size: 14px;
+              background-color: inherit;
+              padding: 0;
+            }
+          }
+        }
+        &--school {
+          &:nth-child(n + 2) {
+            position: relative;
+            &::before {
+              content: "";
+              position: absolute;
+              left: -1.3vw;
+              top: 0;
+              display: block;
+              width: 1px;
+              height: 100%;
+              background-color: #fff;
+              @include g.tb {
+                display: none;
+              }
+            }
+          }
+          @include g.tb {
+            margin-bottom: 18px;
+          }
+        }
+        &-item {
+          &--school {
+            margin-bottom: 27px;
+            @include g.tb {
+              margin-bottom: 11px;
+            }
+            &:last-child {
+              margin-bottom: 0;
+            }
+            &:nth-child(2) {
+              a {
+                // padding-left: 8px;
+                &::before {
+                  //孫白横棒（コース紹介部分）
+                  width: 6px;
+                  height: 6px;
+                  border-radius: 50%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &-application {
+      position: fixed;
+      top: 36px;
+      // right: 60px;
+      right: 3.125%;
+      z-index: 5;
+      @media (max-width: 1280px) {
+        top: 125px;
+      }
+      @include g.tb {
+        position: relative;
+        top: 0;
+        right: 0;
+        color: #fff;
+        margin-bottom: 30px;
+      }
+      &-title {
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        margin-bottom: 9px;
+      }
+      &-text {
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        line-height: 1.58;
+        width: 95%;
+        margin-bottom: 17px;
+      }
+      > a {
+        display: inline-block;
+        background: linear-gradient(to right, g.$blue, g.$green);
+        font-size: clamp(14px, 1vw, 18px);
+        color: #fff;
+        line-height: 1;
+        padding: 2.1355vw 2.84vw;
+        border-radius: 100px;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 16%);
+        transition: 0.3s;
+        &:hover {
+          transform: scale(0.95);
+        }
+      }
+      // &-btn {
+      //   max-width: 263px !important;
+      //   a {
+      //     padding: 12px !important;
+      //     font-size: 14px !important;
+      //     &::before, &::after {
+      //       width: 16px;
+      //       height: 14px;
+      //     }
+      //   }
+      // }
+    }
+    /* ハンバーガーボタン */
+    &-btn {
+      display: none;
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      background: linear-gradient(to bottom, g.$blue, g.$green);
+      // border: 1px solid g.$blue;
+      box-shadow: 0 0 6px rgba(55, 196, 192, 15%);
+      margin-left: 2vw;
+      cursor: pointer;
+      position: relative;
+      pointer-events: auto;
+      transition: 0.3s;
+      @include g.tb {
+        display: block;
+        position: fixed;
+        top: 2.56vw;
+        right: 5.12vw;
+        z-index: 4;
+      }
+      span {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        width: 38px;
+        height: 2px;
+        background-color: #fff;
+        transition: 0.3s;
+        &:nth-child(1) {
+          top: 24px;
+        }
+        &:nth-child(2) {
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+        &:nth-child(3) {
+          bottom: 24px;
+        }
+      }
+      &:hover {
+        span {
+        }
+      }
+    }
+  }
+  &__tel {
+    color: #fff;
+    margin-bottom: 22px;
+    &-upper {
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    &-middle {
+      margin-bottom: 3px;
+      line-height: 1.44;
+      img {
+        width: 26px;
+        margin-right: 6px;
+      }
+      a {
+        color: #fff;
+        display: block;
+        height: 100%;
+      }
+      span {
+        font-family: g.$font-noto;
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: 0.08em;
+        vertical-align: middle;
+      }
+    }
+    &-lower {
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+    }
+  }
+  &__copy {
+    font-family: g.$font-en;
+    font-size: 12px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 5;
+    width: 100%;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    background-color: #fff;
+  }
+  /* ドロワーメニュー
+  ======================================== */
+  &__mask {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    opacity: 0;
+    visibility: hidden;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 75%);
+    @include g.tb {
+      display: none;
+    }
+  }
+}
+// ハンバーガー (クリック時)
+.drawerMenu-open {
+  .header {
+    &__inner {
+      position: relative;
+    }
+    &__nav {
+      &-sp_container {
+        display: block;
+        overflow-y: scroll;
+      }
+      &-btn {
+        span {
+          top: 36px;
+          left: 17px;
+          transform: translateX(-50%);
+
+          &:nth-child(1) {
+            transform: rotate(-30deg);
+          }
+          &:nth-child(2) {
+            transform: rotate(30deg);
+          }
+          &:nth-child(3) {
+            transform: rotate(30deg);
+            // width: 23px;
+          }
+        }
+      }
+    }
+    &__mask {
+      opacity: 1;
+      visibility: visible;
+      right: 0;
+    }
+  }
+}
